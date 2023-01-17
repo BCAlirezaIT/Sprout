@@ -2,17 +2,21 @@
 
 ## 1. Project Description
 State your app in a nutshell, or one-sentence pitch. Give some elaboration on what the core features are.  
-This browser based web application to ... 
+This browser based web application to ... track and reward green lifestyle choices
 
 ## 2. Names of Contributors
 List team members and/or short bio's here... 
+* Vincent Cheung CST rookie
 * Alireza
     C++ & C# Programmer. Excited to be a part of this team for a purposeful project.
 * Sean
+<<<<<<< HEAD
     Hi my name is Sean. I'm excited about this project because ABCDEFGHIJKLMNOPQRSTUVWXYZ
+=======
+* Hi my name is Sean. I'm excited about this project because ABCDEFGHIJKLMNOPQRSTUVWXYZ
+>>>>>>> eb19afbcfdb3f5d6edd36634631ac52b77c1c2b4
 * Isaiah
     Hi! My name is Isaiah and I hope to contribute to this project to tackle a real on-going problem, and to also practice UI/UX design.
-* Vincent
 	
 ## 3. Technologies and Resources Used
 List technologies (with version numbers), API's, icons, fonts, images, media or data sources, and other resources that were used.
