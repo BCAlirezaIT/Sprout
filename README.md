@@ -7,7 +7,7 @@ This browser based web application to ... track and reward green lifestyle choic
 ## 2. Names of Contributors
 List team members and/or short bio's here... 
 * Vincent Cheung 
-    CST rookie, looking to get my first project experience with good collaboration.
+    - CST rookie, looking to get my first project experience with good collaboration.
 * Alireza
     - C++ & C# Programmer. Excited to be a part of this team for a purposeful project.
 * Sean
