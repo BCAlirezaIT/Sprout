@@ -8,6 +8,8 @@ This browser based web application to ... track and reward green lifestyle choic
 List team members and/or short bio's here... 
 * Vincent Cheung CST rookie
 * Alireza
+    C++ & C# Programmer. Excited to be a part of this team for a purposeful project.
+* Sean
 * Hi my name is Sean. I'm excited about this project because ABCDEFGHIJKLMNOPQRSTUVWXYZ
 * Isaiah
     Hi! My name is Isaiah and I hope to contribute to this project to tackle a real on-going problem, and to also practice UI/UX design.
