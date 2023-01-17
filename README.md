@@ -7,12 +7,9 @@ This browser based web application to ...
 ## 2. Names of Contributors
 List team members and/or short bio's here... 
 * Alireza
-<<<<<<< HEAD
     C++ & C# Programmer. Excited to be a part of this team for a purposeful project.
 * Sean
-=======
 * Hi my name is Sean. I'm excited about this project because ABCDEFGHIJKLMNOPQRSTUVWXYZ
->>>>>>> 63663e53717654c481d48dde09f3b66c9d3cb761
 * Isaiah
     Hi! My name is Isaiah and I hope to contribute to this project to tackle a real on-going problem, and to also practice UI/UX design.
 * Vincent
