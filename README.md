@@ -7,6 +7,7 @@ This browser based web application to ...
 ## 2. Names of Contributors
 List team members and/or short bio's here... 
 * Alireza
+    C++ & C# Programmer. Excited to be a part of this team for a purposeful project.
 * Sean
 * Isaiah
 * Vincent
