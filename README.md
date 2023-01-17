@@ -7,8 +7,10 @@ This browser based web application to ... track and reward green lifestyle choic
 ## 2. Names of Contributors
 List team members and/or short bio's here... 
 * Vincent Cheung CST rookie
-* ...
-* ...
+* Alireza
+* Hi my name is Sean. I'm excited about this project because ABCDEFGHIJKLMNOPQRSTUVWXYZ
+* Isaiah
+    Hi! My name is Isaiah and I hope to contribute to this project to tackle a real on-going problem, and to also practice UI/UX design.
 	
 ## 3. Technologies and Resources Used
 List technologies (with version numbers), API's, icons, fonts, images, media or data sources, and other resources that were used.
