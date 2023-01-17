@@ -9,6 +9,7 @@ List team members and/or short bio's here...
 * Alireza
 * Hi my name is Sean. I'm excited about this project because ABCDEFGHIJKLMNOPQRSTUVWXYZ
 * Isaiah
+    Hi! My name is Isaiah and I hope to contribute to this project to tackle a real on-going problem, and to also practice UI/UX design.
 * Vincent
 	
 ## 3. Technologies and Resources Used
