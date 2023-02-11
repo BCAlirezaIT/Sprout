@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Sprout</title>
+    <title>Contact Us - Sprout</title>
     <meta name="comp1800 template" content="My 1800 App" />
 
     <!-- Required meta tags -->
@@ -15,6 +15,8 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+
+    <link href="styles/contact.css" rel="stylesheet">
     <!-- Boostrap Library JS CDN  go here -->
 
     <!-- Other libraries go here -->
@@ -24,6 +26,8 @@
       src="https://kit.fontawesome.com/36e5d26d04.js"
       crossorigin="anonymous"
     ></script>
+
+    <script src="scripts/script.js"></script>
 
     <!-- Link to styles of your own -->
     <link rel="stylesheet" href="./styles/stylesheets.css" />
@@ -39,27 +43,36 @@
         <div>
           <!-- <h3 class="float-md-start mb-0"></h3> -->
           <nav class="nav nav-masthead justify-content-evenly">
-            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            <a class="nav-link" aria-current="page" href="index.html">Home</a>
             <a class="nav-link" href="features/index.html">Features</a>
-            <a class="nav-link" href="contact.html">Contact</a>
+            <a class="nav-link active" href="contact.html">Contact</a>
           </nav>
         </div>
       </header>
 
       <main class="px-3">
-        <h1>Sprout</h1>
-        <p class="lead">
-          A companion that helps you connect to the world's green activities.
-          <br/>
-          Attain motivation and certainty that you're truly making a difference in the world.
-        </p>
-        <p class="lead">
-          <a
-            href="./features/index.html"
-            class="btn btn-lg btn-secondary fw-bold border-white bg-white"
-            >Learn more</a
-          >
-        </p>
+        <h1>Contact Us</h1>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 offset-md-2">
+              <form>
+                <div class="form-group">
+                  <label for="name">Name</label>
+                  <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                  <label for="email">Email address</label>
+                  <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                  <label for="message">Message</label>
+                  <textarea class="form-control" id="message" rows="3" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
       </main>
 
       <footer class="mt-auto text-white-50">
