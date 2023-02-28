@@ -62,7 +62,6 @@ nav#slide-menu > ul li:before {
   font-family: "ico";
   font-style: normal;
   font-weight: normal;
-  speak: none;
   display: inline-block;
   text-decoration: inherit;
   width: 1em;
@@ -171,15 +170,19 @@ body.menu-active div#content-nav .menu-trigger {
 }
 
 div#footer {
-  width: 100%;
+  width: 90%;
   bottom: 0.5%;
-  display: flex;
+  left: 5.5%;
   position: fixed;
   align-items: center;
   justify-content: space-between;
 }
 div#footer > ul {
-  width: 90%;
+  width: 100%;
+}
+
+div.invisible {
+  display: none;
 }
 
 div#logo {
