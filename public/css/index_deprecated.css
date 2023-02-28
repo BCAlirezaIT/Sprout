@@ -4,9 +4,8 @@
 
 html,
 body {
-  height: 100%; 
+  height: 100%;
 }
-
 
 .bd-placeholder-img {
   font-size: 1.125rem;
@@ -39,8 +38,8 @@ body {
   box-shadow: inset 0 0 5rem rgba(0, 0, 0, 0.5);
 }
 
-.px-3{
-  color: #95D5B2;
+.px-3 {
+  color: #2e8b57;
 }
 
 .cover-container {
@@ -69,6 +68,6 @@ body {
 }
 
 .nav-masthead .active {
-  color: #74C69D;
-  border-bottom-color: #74C69D;
+  color: #74c69d;
+  border-bottom-color: #74c69d;
 }
