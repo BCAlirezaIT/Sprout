@@ -190,6 +190,30 @@ div#logo {
   justify-content: center;
 }
 
+div#carousel {
+  margin-bottom: 10%;
+}
+@media only screen and (max-width: 700px) {
+  div#carousel {
+    margin-bottom: 25%;
+  }
+}
+@media only screen and (max-width: 400px) {
+  div#carousel {
+    margin-bottom: 35%;
+  }
+}
+@media only screen and (max-width: 350px) {
+  div#carousel {
+    margin-bottom: 40%;
+  }
+}
+@media only screen and (max-width: 300px) {
+  div#carousel {
+    margin-bottom: 50%;
+  }
+}
+
 div.col-sm-6 div.card-body {
   background: linear-gradient(109.6deg, rgb(217, 250, 158) 11.2%, rgb(128, 251, 174) 91.1%);
 }

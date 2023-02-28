@@ -213,6 +213,22 @@ div#logo {
   justify-content: center;
 }
 
+div#carousel {
+  @media only screen and (max-width: 700px) {
+    margin-bottom: 25%;
+  }
+  @media only screen and (max-width: 400px) {
+    margin-bottom: 35%;
+  }
+  @media only screen and (max-width: 350px) {
+    margin-bottom: 40%;
+  }
+  @media only screen and (max-width: 300px) {
+    margin-bottom: 50%;
+  }
+  margin-bottom: 10%;
+}
+
 div.col-sm-6 div.card-body {
   background: linear-gradient(
     109.6deg,
