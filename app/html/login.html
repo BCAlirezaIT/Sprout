@@ -16,6 +16,7 @@
       crossorigin="anonymous"
     />
     <!-- Boostrap Library JS CDN  go here -->
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
@@ -42,24 +43,19 @@
   <body class="d-flex h-100 text-center text-white bg-dark">
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
       <header class="mb-auto">
-
+        
       </header>
 
       <main class="px-3">
-        <h1>Sprout</h1>
+        <h1>Login to Sprout</h1>
         <p class="lead">
           A companion that helps you connect to the world's green activities.
           <br />
           Attain motivation and certainty that you're truly making a difference
           in the world.
         </p>
-        <p class="lead">
-          <a
-            href="login.html"
-            class="btn btn-lg btn-secondary fw-bold border-white bg-white"
-            >Login</a
-          >
-        </p>
+          <div id="firebaseui-auth-container"></div>
+          <div id="loader">Loading...</div>
       </main>
 
       <footer class="mt-auto text-white-50">
@@ -70,8 +66,8 @@
         </p>
       </footer>
     </div>
-
+    <script src="../../public/js/authentication.js"></script>
     <script src="../../public/js/firebaseAPI_SPROUT.js"></script>
-
   </body>
 </html>
+
