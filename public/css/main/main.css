@@ -62,7 +62,6 @@ nav#slide-menu > ul li:before {
   font-family: "ico";
   font-style: normal;
   font-weight: normal;
-  speak: none;
   display: inline-block;
   text-decoration: inherit;
   width: 1em;
@@ -171,20 +170,48 @@ body.menu-active div#content-nav .menu-trigger {
 }
 
 div#footer {
-  width: 100%;
+  width: 90%;
   bottom: 0.5%;
-  display: flex;
+  left: 5.5%;
   position: fixed;
   align-items: center;
   justify-content: space-between;
 }
 div#footer > ul {
-  width: 90%;
+  width: 100%;
+}
+
+div.invisible {
+  display: none;
 }
 
 div#logo {
   display: flex;
   justify-content: center;
+}
+
+div#carousel {
+  margin-bottom: 10%;
+}
+@media only screen and (max-width: 700px) {
+  div#carousel {
+    margin-bottom: 25%;
+  }
+}
+@media only screen and (max-width: 400px) {
+  div#carousel {
+    margin-bottom: 35%;
+  }
+}
+@media only screen and (max-width: 350px) {
+  div#carousel {
+    margin-bottom: 40%;
+  }
+}
+@media only screen and (max-width: 300px) {
+  div#carousel {
+    margin-bottom: 50%;
+  }
 }
 
 div.col-sm-6 div.card-body {

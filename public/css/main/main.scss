@@ -71,7 +71,6 @@ nav#slide-menu {
       font-family: "ico";
       font-style: normal;
       font-weight: normal;
-      speak: none;
       display: inline-block;
       text-decoration: inherit;
       width: 1em;
@@ -192,22 +191,42 @@ body.menu-active div#content-nav .menu-trigger {
 }
 
 div#footer {
-  width: 100%;
+  width: 90%;
   bottom: 0.5%;
-  display: flex;
+  left: 5.5%;
   position: fixed;
   align-items: center;
   justify-content: space-between;
 
   > ul {
-    width: 90%;
+    width: 100%;
   }
+}
+
+div.invisible {
+  display: none;
 }
 
 // WARNING Everything underneath will be deleted to apply nav-bar and footer everywhere else.
 div#logo {
   display: flex;
   justify-content: center;
+}
+
+div#carousel {
+  @media only screen and (max-width: 700px) {
+    margin-bottom: 25%;
+  }
+  @media only screen and (max-width: 400px) {
+    margin-bottom: 35%;
+  }
+  @media only screen and (max-width: 350px) {
+    margin-bottom: 40%;
+  }
+  @media only screen and (max-width: 300px) {
+    margin-bottom: 50%;
+  }
+  margin-bottom: 10%;
 }
 
 div.col-sm-6 div.card-body {
