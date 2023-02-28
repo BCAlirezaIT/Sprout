@@ -1,6 +1,4 @@
-<<<<<<< HEAD
 body {
-<<<<<<< HEAD
   color: #2e8b57;
   background-color: rgb(22, 22, 22);
 }
@@ -9,13 +7,9 @@ body {
   color: white;
   background-color: #2e8b57 !important;
   border-color: #2e8b57 !important;
-=======
   background-color: #2e8b57;
->>>>>>> a2ec361 (Fixed login authentication.)
 }
 
-=======
->>>>>>> 54a690c (Fixed global.css, fixed log-in authentication.)
 .wh1 {
   height: 1vw;
   width: 1vw;
@@ -25,10 +19,7 @@ body {
   height: 2vw;
   width: 2vw;
 }
-<<<<<<< HEAD
 
 .h3 {
   height: 3vw;
 }
-=======
->>>>>>> a2ec361 (Fixed login authentication.)
