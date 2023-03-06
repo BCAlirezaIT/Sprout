@@ -3,4 +3,6 @@
 node_modules/
 .vscode/
 testFile.html
+testFile.js
 firebaseAPI_SPROUT.js
+format_page.html
