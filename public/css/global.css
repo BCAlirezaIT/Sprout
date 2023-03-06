@@ -7,7 +7,6 @@ body {
   color: white;
   background-color: #2e8b57 !important;
   border-color: #2e8b57 !important;
-  background-color: #2e8b57;
 }
 
 .wh1 {
@@ -18,8 +17,4 @@ body {
 .wh2 {
   height: 2vw;
   width: 2vw;
-}
-
-.h3 {
-  height: 3vw;
 }
