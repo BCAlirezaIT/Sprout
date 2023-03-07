@@ -54,24 +54,24 @@ const closeModal = function () {
     Opening Recycling Modal
 */
 btnOpenRecycling.addEventListener('click', function () {
-    // loadModalWithHTML('./recycle_modal.html');
-    console.log($('#modal').load('./recycle_modal.html'));
-    // console.log($('#navbarPlaceholder').load('./text/nav_after_login.html'));
-    // console.log($('#footerPlaceholder').load('./text/footer.html'));
-    modal.classList.remove('invisible');
-    overlay.classList.remove('invisible');
-    // console.log(loadModalWithHTML('./modal_template.html'));
-    console.log(modal.innerHTML);
+    console.log($('#modal-content').load('./recycle_modal.html'));
+    openModal();
 });
 
 
-
+/*
+    Opening Transportation Modal
+*/
+btnOpenTransportation.addEventListener('click', function () {
+    console.log($('#modal-content').load('./transportation_modal.html'));
+    openModal();
+});
 
 
 /*
     Closing Modals
 */
-// btnCloseModal.addEventListener('click', closeModal);
+btnCloseModal.addEventListener('click', closeModal);
 overlay.addEventListener('click', closeModal);
 
 document.addEventListener('keydown', function (event) {

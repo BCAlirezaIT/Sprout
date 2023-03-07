@@ -1,0 +1,103 @@
+  <div class="container mt-5">
+    <h1 class="text-center mb-4">Transportation</h1>
+    <form>
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"
+              ><img
+                class="wh1"
+                src="../../public/images/transportation/startpoint.png"
+            /></span>
+          </div>
+          <input
+            type="text"
+            id="start"
+            class="form-control"
+            placeholder="Start Point"
+          />
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"
+              ><img
+                class="wh1"
+                src="../../public/images/transportation/destination.png"
+            /></span>
+          </div>
+          <input
+            type="text"
+            id="end"
+            class="form-control"
+            placeholder="Destination"
+          />
+        </div>
+      </div>
+      <div class="form-group">
+        <div id="map" style="height: 400px"></div>
+      </div>
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"
+              ><img
+                class="wh1"
+                src="../../public/images/transportation/distance.png"
+            /></span>
+          </div>
+          <input
+            type="text"
+            id="travel-distance"
+            class="form-control"
+            placeholder="Travel Distance"
+            readonly
+          />
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="transportation"
+              ><img
+                class="wh1"
+                src="../../public/images/transportation/type.png"
+            /></label>
+          </div>
+          <select id="transportation" class="custom-select">
+            <option value="BICYCLING">Bicycle</option>
+            <option value="TRANSIT">Bus</option>
+            <option value="DRIVING">Metro</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"
+              ><img
+                class="wh1"
+                src="../../public/images/transportation/points.png"
+            /></span>
+          </div>
+          <input
+            type="text"
+            id="points-earned"
+            class="form-control"
+            placeholder="Points Earned"
+            readonly
+          />
+        </div>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
+<script
+async
+defer
+src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
+></script>

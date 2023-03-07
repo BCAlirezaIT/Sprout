@@ -14,13 +14,13 @@
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
     />
+
     <!-- Boostrap Library JS CDN  go here -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
       crossorigin="anonymous"
     ></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
@@ -36,15 +36,29 @@
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
+
+    <!-- JQuery & Popper -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
     <!-- FontAwesome Library -->
     <script
       src="https://kit.fontawesome.com/36e5d26d04.js"
       crossorigin="anonymous"
     ></script>
 
+    <!-- Google Map API -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
+    ></script>
+
     <!-- Link to styles of your own -->
     <link rel="stylesheet" href="../../public/css/global.css" />
-    <link rel="stylesheet" href="../../public/css/recycle_modal.css" />
+    <link rel="stylesheet" href="../../public/css/transportation.css" />
     <link rel="stylesheet" href="../../public/css/main/main.css" />
   </head>
 
@@ -195,6 +209,10 @@
                   Are you planning to travel? <br />
                   Track your distance and gain points!
                 </p>
+                <!-- <a href="./transportation.html" class="btn btn-light">
+                  <i class="fa-solid fa-bicycle"></i>
+                  Track Transportation
+                </a> -->
                 <div id="transportation-function" class="btn btn-light">
                   <i class="fa-solid fa-bicycle"></i>
                   Track Transportation
@@ -204,7 +222,10 @@
           </div>
         </div>
 
-        <div id="modal" class="invisible"></div>
+        <div id="modal" class="invisible">
+          <button class="close-modal">&times;</button>
+          <div id="modal-content"></div>
+        </div>
         <div class="overlay invisible"></div>
 
         <!-- TODO: FIX THIS Used to Space Divs Out
@@ -321,10 +342,8 @@
         <!-- Do NOT Delete This div Below -->
       </div>
     </div>
+    <script src="../../public/js/transportaion.js"></script>
     <script src="../../public/js/main.js"></script>
     <script src="../../public/js/firebaseAPI_SPROUT.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </body>
 </html>
