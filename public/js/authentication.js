@@ -9,7 +9,8 @@ const uiConfig = {
           name: user.displayName,                    //"users" collection
           email: user.email,
           friends: [],
-          country: undefined,                  //with authenticated user's ID (user.uid)
+          country: "",
+          points: 0              //with authenticated user's ID (user.uid)
         }).then(function () {
           console.log("New user added to firestore");
           window.location.assign("main.html");       //re-direct to main.html after signup

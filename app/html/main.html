@@ -30,8 +30,12 @@
       rel="stylesheet"
       href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css"
     />
-    <!-- Other libraries go here -->
 
+    <!-- Other libraries go here -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
     <!-- FontAwesome Library -->
     <script
       src="https://kit.fontawesome.com/36e5d26d04.js"
@@ -39,6 +43,8 @@
     ></script>
 
     <!-- Link to styles of your own -->
+    <link rel="stylesheet" href="../../public/css/global.css" />
+    <link rel="stylesheet" href="../../public/css/recycle_modal.css" />
     <link rel="stylesheet" href="../../public/css/main/main.css" />
   </head>
 
@@ -170,13 +176,13 @@
                 <h5 class="card-title">Record Recyclable</h5>
                 <br />
                 <p class="card-text">
-                  Have somethings to recycle? <br />
+                  Have something to recycle? <br />
                   Recycle them now and gain points!
                 </p>
-                <a href="./recycle.html" class="btn btn-light">
+                <div id="recycle-function" class="btn btn-light">
                   <i class="fa-solid fa-recycle"></i>
-                  Recycle Items</a
-                >
+                  Recycle Items
+                </div>
               </div>
             </div>
           </div>
@@ -189,17 +195,19 @@
                   Are you planning to travel? <br />
                   Track your distance and gain points!
                 </p>
-                <a href="./transportation.html" class="btn btn-light">
+                <div id="transportation-function" class="btn btn-light">
                   <i class="fa-solid fa-bicycle"></i>
-                  Track Transportation</a
-                >
+                  Track Transportation
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- TODO: FIX THIS 
-            Used to Space Divs Out
+        <div id="modal" class="invisible"></div>
+        <div class="overlay invisible"></div>
+
+        <!-- TODO: FIX THIS Used to Space Divs Out
         Not the best way to do this, but am lazy and it's 12:37AM -->
         <div class="empty-div">
           <br />
@@ -315,5 +323,8 @@
     </div>
     <script src="../../public/js/main.js"></script>
     <script src="../../public/js/firebaseAPI_SPROUT.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </body>
 </html>

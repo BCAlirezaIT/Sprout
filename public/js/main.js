@@ -1,5 +1,20 @@
+'use strict';
+
 /*
-  Slidemenu
+    Function to fetch HTML
+*/
+async function fetchHtmlAsText(url) {
+    const response = await fetch(url);
+    return await response.text();
+}
+
+async function loadModalWithHTML(url) {
+    const contentDiv = document.querySelector('.modal');
+    contentDiv.innerHTML = await fetchHtmlAsText(url);
+}
+
+/*
+    Slidemenu
 */
 (function () {
     var $body = document.body
@@ -14,3 +29,55 @@
     }
 
 }).call(this);
+
+/*
+    Modal Management 
+*/
+
+const modal = document.querySelector('#modal');
+const overlay = document.querySelector('.overlay');
+const btnCloseModal = document.querySelector('.close-modal');
+const btnOpenRecycling = document.querySelector('#recycle-function');
+const btnOpenTransportation = document.querySelector('#transportation-function');
+
+const openModal = function () {
+    modal.classList.remove('invisible');
+    overlay.classList.remove('invisible');
+}
+
+const closeModal = function () {
+    modal.classList.add('invisible');
+    overlay.classList.add('invisible');
+}
+
+/*
+    Opening Recycling Modal
+*/
+btnOpenRecycling.addEventListener('click', function () {
+    // loadModalWithHTML('./recycle_modal.html');
+    console.log($('#modal').load('./recycle_modal.html'));
+    // console.log($('#navbarPlaceholder').load('./text/nav_after_login.html'));
+    // console.log($('#footerPlaceholder').load('./text/footer.html'));
+    modal.classList.remove('invisible');
+    overlay.classList.remove('invisible');
+    // console.log(loadModalWithHTML('./modal_template.html'));
+    console.log(modal.innerHTML);
+});
+
+
+
+
+
+/*
+    Closing Modals
+*/
+// btnCloseModal.addEventListener('click', closeModal);
+overlay.addEventListener('click', closeModal);
+
+document.addEventListener('keydown', function (event) {
+    console.log(event.key);
+
+    if (event.key === 'Escape' && !modal.classList.contains('invisible')) {
+        closeModal();
+    };
+})
