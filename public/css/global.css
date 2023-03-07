@@ -18,3 +18,7 @@ body {
   height: 2vw;
   width: 2vw;
 }
+
+.form-control {
+  height: auto !important;
+}
