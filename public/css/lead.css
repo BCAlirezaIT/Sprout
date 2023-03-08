@@ -1,0 +1,25 @@
+button {
+    background-color: #2e8b57;
+    color: white;
+    float: right;
+}
+.table thead{
+    background: #2e8b57;
+    color:white;
+}
+.table tbody tr:nth-child(even) {
+    background-color: #e6ebe0;
+}  
+.table tbody tr:nth-child(odd) {
+    background-color: white;
+}
+th:nth-child(1) {
+    width: 20%;
+}
+th:nth-child(2) {
+width: 60%;
+}
+th:nth-child(3) {
+width: 20%;
+}
+  

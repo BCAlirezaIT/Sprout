@@ -40,7 +40,6 @@
 
     <!-- Link to styles of your own -->
     <link rel="stylesheet" href="../../public/css/main/main.css" />
-    <link rel="stylesheet" href="../../public/css/lead.css"/>
   </head>
 
   <body>
@@ -56,7 +55,7 @@
               <a class="nav-link" href="#">Profile</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./notifications.html">Notifications</a>
+              <a class="nav-link active" href="#">Notifications</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Activity Log</a>
@@ -110,46 +109,18 @@
         <div class="overlay invisible"></div>
 
         <!-- Delete everything between this and content-nav to reset.-->
-        <div class="card-body form-group dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu" data-bs-toggle="dropdown" aria-expanded="false">
-            Leaderboards
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-            <li><button class="dropdown-item" type="button" id="leveleasy"><a href="leaderboardsFriends.html">Friends</a></button></li>
-            <li><button class="dropdown-item" type="button" id="levelmoderate"><a href="leaderboardsCommunity.html">Community</a></button></li>
-            <li><button class="dropdown-item" type="button" id="levelhard"><a href="leaderboardsGlobal.html">Global</a></button></li>
-          </ul>
-        </div>
-
-        <div class="container my-4">
-          <h1 class="text-center">Friends</h1>
-          <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th>Rank</th>
-                <th>Name</th>
-                <th>Points</th>
-              </tr>
-            </thead>
-            <tbody id="leaderboardF-body">
-              <!-- This will be populated with data from Firestore -->
-            </tbody>
-          </table>
-        </div>     
-        
-        <footer class="footer mt-auto py-3 fixed-bottom">
-          <div class="container d-flex justify-content-between">
-            <span>Rank: <span id="user-rank"></span></span>
-            <span>Name: <span id="user-name"></span></span>
-            <span>Points: <span id="user-score"></span></span>
+        <div class="container">
+          <h1>Notifications</h1>
+          <div id="accordion">
+            <!-- The notifications will be dynamically generated here -->
           </div>
-        </footer>
-        
+        </div>
+      
         <!-- Do NOT Delete This div Below -->
       </div>
     </div>
     <script src="../../public/js/main.js"></script>
     <script src="../../public/js/firebaseAPI_SPROUT.js"></script>
-    <script src="../../public/js/lead.js"></script>
+    <script src="../../public/js/notifications.js"></script>
   </body>
 </html>
