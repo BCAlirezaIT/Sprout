@@ -94,17 +94,21 @@
 
 // const countryScoreDoc = db.collection("scores").doc("<country-id>");
 
-// countryScoreDoc.onSnapshot(doc => {
-//   const data = doc.data();
-//   db.collection("scores").orderBy("score", "desc").get().then(querySnapshot => {
-//     let rank = 1;
-//     querySnapshot.forEach(doc => {
-//       if (doc.id === "<country-id>") {
-//         document.getElementById("country-rank").textContent = rank;
-//       }
-//       rank++;
-//     });
-//   });
-//   document.getElementById("country-name").textContent = data.country;
-//   document.getElementById("country-score").textContent = data.score;
-// });
+// function populateGlobal() {
+//     let leadGlobal = document.getElementById("leadGlobal");
+
+//     var userID = localStorage.getItem("userDocID");
+
+//     db.collection("user").where("userDocID", "==", userID).get()
+//         .then(leaderboards => {
+//             // var rank = doc.data().rank;
+//             var country = doc.data().country;
+//             // var points = doc.data().points;
+
+//             let global = leadGlobal.content.cloneNode(true);
+//             // global.querySelector('.rank').innerHTML = title;
+//             global.querySelector('.country').innerHTML = country;
+//             // global.querySelector('.points').innerHTML = points;
+//         })
+// }
+// populateGlobal();
