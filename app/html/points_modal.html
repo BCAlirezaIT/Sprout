@@ -19,10 +19,9 @@
   'transportationPoints'. This way, we don't have to create another
   copy of this page.
   */
-  const pointsEarned = localStorage.getItem("recyclePoints");
-  const points = document.querySelector("#points");
-  points.textContent = pointsEarned;
+  pointsEarned = localStorage.getItem("recyclePoints");
+  document.querySelector("#points").textContent = pointsEarned;
 
-  const close = document.querySelector("#close-point-modal");
-  close.addEventListener("click", closeModal);
+  modalButton = document.querySelector("#close-point-modal");
+  modalButton.addEventListener("click", closeModal);
 </script>

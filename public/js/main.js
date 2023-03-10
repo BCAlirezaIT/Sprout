@@ -1,6 +1,12 @@
 'use strict';
 
 /*
+    Modal Variable Set-Up
+*/
+let modalButton;
+let pointsEarned;
+
+/*
     Function to fetch HTML
 */
 async function fetchHtmlAsText(url) {
@@ -75,8 +81,6 @@ btnCloseModal.addEventListener('click', closeModal);
 overlay.addEventListener('click', closeModal);
 
 document.addEventListener('keydown', function (event) {
-    console.log(event.key);
-
     if (event.key === 'Escape' && !modal.classList.contains('invisible')) {
         closeModal();
     };
@@ -90,29 +94,10 @@ document.addEventListener('keydown', function (event) {
 const totalPointsEarned = document.querySelector('#carousel-activity-text');
 const userID = localStorage.getItem("SproutID");
 const userRecycling = db.collection('users').doc(userID).collection('recycling');
-
 const userObserver = userRecycling.onSnapshot(recycleData => {
     let userPoints = 0;
     recycleData.forEach(doc => {
         userPoints += doc.data().points;
-        console.log(doc.data().points);
     });
     totalPointsEarned.textContent = userPoints;
 })
-
-
-// if (userRecycling.exists) {
-//     const userRecycling = userRecycling.onSnapshot(recycleData => {
-//         let userPoints = 0;
-//         recycleData.forEach(doc => {
-//             userPoints += doc.data().points;
-//             console.log(doc.data().points);
-//         });
-//         totalPointsEarned.textContent = userPoints;
-//     })
-// } else {
-//     console.log("User has not recycled yet.");
-//     console.log(userID);
-//     totalPointsEarned.textContent = 0;
-// }
-

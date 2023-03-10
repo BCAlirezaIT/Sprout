@@ -10,7 +10,7 @@ function writeRecycle() {
     let other = Number(document.getElementById("other-recycled").value);
 
     // Logic for Points Earned.
-    const pointsEarned = (cans * 1.5) + (wood * 2) + (batteries * 5) + (paper * 1) + (plastic * 3)
+    pointsEarned = (cans * 1.5) + (wood * 2) + (batteries * 5) + (paper * 1) + (plastic * 3)
         + (electronics * 10) + (glass * 3.5) + (metal * 5.5) + (other);
 
     console.log(`cans: ${cans}, wood: ${wood}, batteries: ${batteries},
@@ -66,9 +66,9 @@ function writeRecycle() {
     });
 }
 
-const recycleButton = document.querySelector('#submit-recycle');
+modalButton = document.querySelector('#submit-recycle');
 
-recycleButton.addEventListener('click', function () {
+modalButton.addEventListener('click', function () {
     console.log("Successfully wrote to recycle.");
     writeRecycle();
 })
