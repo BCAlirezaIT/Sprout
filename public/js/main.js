@@ -86,6 +86,33 @@ document.addEventListener('keydown', function (event) {
  * Carousel Management
  */
 
+// Total Points Earned Carousel
 const totalPointsEarned = document.querySelector('#carousel-activity-text');
-// I put the user ID in as a local storage when they first make their account.
-// Use this? 
+const userID = localStorage.getItem("SproutID");
+const userRecycling = db.collection('users').doc(userID).collection('recycling');
+
+const userObserver = userRecycling.onSnapshot(recycleData => {
+    let userPoints = 0;
+    recycleData.forEach(doc => {
+        userPoints += doc.data().points;
+        console.log(doc.data().points);
+    });
+    totalPointsEarned.textContent = userPoints;
+})
+
+
+// if (userRecycling.exists) {
+//     const userRecycling = userRecycling.onSnapshot(recycleData => {
+//         let userPoints = 0;
+//         recycleData.forEach(doc => {
+//             userPoints += doc.data().points;
+//             console.log(doc.data().points);
+//         });
+//         totalPointsEarned.textContent = userPoints;
+//     })
+// } else {
+//     console.log("User has not recycled yet.");
+//     console.log(userID);
+//     totalPointsEarned.textContent = 0;
+// }
+
