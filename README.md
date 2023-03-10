@@ -11,7 +11,7 @@ List team members and/or short bio's here...
 * Alireza
     - C++ & C# Programmer. Excited to be a part of this team for a purposeful project.
 * Sean
-    - Hi my name is Sean. I'm excited about this project because ABCDEFGHIJKLMNOPQRSTUVWXYZ
+    - Hi my name is Sean. I'm excited about this project because it's a way for me to test everything I learn during my studies.
 * Isaiah
     - Hi! My name is Isaiah and I hope to contribute to this project to tackle a real on-going problem, and to also practice UI/UX design.
 	
