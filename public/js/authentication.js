@@ -4,11 +4,11 @@ const uiConfig = {
   callbacks: {
     signInSuccessWithAuthResult: function (authResult, redirectUrl) {
       const user = authResult.user;                            // get the user object from the Firebase authentication database
-      if (authResult.additionalUserInfo.isNewUser) {         //if new user
+      if (authResult.additionalUserInfo.isNewUser) {
+        //if new user
         db.collection("users").doc(user.uid).set({         //write to firestore. We are using the UID for the ID in users collection
           name: user.displayName,                    //"users" collection
           email: user.email,
-          friends: [],
           country: "",
           points: 0              //with authenticated user's ID (user.uid)
         }).then(function () {
@@ -17,6 +17,7 @@ const uiConfig = {
         }).catch(function (error) {
           console.log("Error adding new user: " + error);
         });
+
       } else {
         return true;
       }

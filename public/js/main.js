@@ -46,6 +46,7 @@ const openModal = function () {
 }
 
 const closeModal = function () {
+    console.log("This function was called too early!");
     modal.classList.add('invisible');
     overlay.classList.add('invisible');
 }
