@@ -17,7 +17,7 @@ const uiConfig = {
         }).catch(function (error) {
           console.log("Error adding new user: " + error);
         });
-
+        localStorage.setItem('SproutID', user.uid);
       } else {
         return true;
       }

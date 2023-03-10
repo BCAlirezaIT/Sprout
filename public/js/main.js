@@ -81,3 +81,11 @@ document.addEventListener('keydown', function (event) {
         closeModal();
     };
 });
+
+/**
+ * Carousel Management
+ */
+
+const totalPointsEarned = document.querySelector('#carousel-activity-text');
+// I put the user ID in as a local storage when they first make their account.
+// Use this? 

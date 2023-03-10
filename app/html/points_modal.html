@@ -12,3 +12,19 @@
   </div>
   <div class="card-footer text-muted"></div>
 </div>
+<script>
+  /* 
+  We should set up a localStorage that says 0 or 1 and put this under
+  an if-condition. If 0, we put in 'recyclePoints' and if 1, we put in
+  'transportationPoints'. This way, we don't have to create another
+  copy of this page.
+  */
+  const pointsEarned = localStorage.getItem("recyclePoints");
+  const points = document.querySelector("#points");
+  points.textContent = pointsEarned;
+
+  const close = document.querySelector("#close-point-modal");
+  close.addEventListener("click", function () {
+    window.location.reload();
+  });
+</script>
