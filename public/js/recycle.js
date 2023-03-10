@@ -1,5 +1,4 @@
 const writeRecycle = function () {
-    console.log("inside write review")
     let cans = Number(document.getElementById("cans-recycled").value);
     let wood = Number(document.getElementById("wood-recycled").value);
     let batteries = Number(document.getElementById("batteries-recycled").value);
@@ -10,6 +9,10 @@ const writeRecycle = function () {
     let metal = Number(document.getElementById("metal-recycled").value);
     let other = Number(document.getElementById("other-recycled").value);
 
+    // Logic for Points Earned.
+    let pointsEarned = (cans * 1.5) + (wood * 2) + (batteries * 5) + (paper * 1) + (plastic * 3)
+        + (electronics * 10) + (glass * 3.5) + (metal * 5.5) + (other);
+
     console.log(`cans: ${cans}, wood: ${wood}, batteries: ${batteries},
     paper: ${paper}, plastic: ${plastic}, electronics: ${electronics}, glass: ${glass},
     metal: ${metal}, other: ${other}`);
@@ -18,11 +21,10 @@ const writeRecycle = function () {
         if (user) {
             var currentUser = db.collection("users").doc(user.uid)
             var userID = user.uid;
-            // let recycleKey = newPostRef.key();
+
             //get the document for current user.
             currentUser.get()
-                .then(userDoc => {
-                    var userEmail = userDoc.data().email;
+                .then(function () {
                     db.collection("users").doc(user.uid).collection("recycling").add({
                         // GUID: recycleKey,
                         cans: cans,
@@ -34,15 +36,15 @@ const writeRecycle = function () {
                         glass: glass,
                         metal: metal,
                         other: other,
+                        points: pointsEarned,
                         timestamp: firebase.firestore.FieldValue.serverTimestamp()
                     }).then(() => {
-                        //TODO: Change modal to show total points earned.
-                        // window.location.href = "login.html"; //new line added
+                        console.log($('#modal-content').load('./points_modal.html'));
                     })
                 })
         } else {
             console.log("No user is signed in");
-            // window.location.href = 'main.html';
+            window.location.href = 'main.html';
         }
     });
 }
