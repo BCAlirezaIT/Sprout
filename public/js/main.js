@@ -101,3 +101,14 @@ const userObserver = userRecycling.onSnapshot(recycleData => {
     });
     totalPointsEarned.textContent = userPoints;
 })
+
+const userName = db.collection("users").doc(userID); // will to to the firestore and go to the document of the user
+
+userName.get().then(userDoc => {
+    //get the user name
+    var userName = userDoc.data().name;
+    console.log(userName);
+    //$("#name-goes-here").text(userName); //jquery
+    document.getElementById("welcome-user").innerText=userName;
+
+})

@@ -32,15 +32,14 @@ function displayCardsDynamically(collection) {
       .then(allrecycling=> {
           //var i = 1;  //Optional: if you want to have a unique ID for each hike
           allrecycling.forEach(doc => { //iterate thru each doc
-              var title = doc.data().username;       // get value of the "name" key
+              var title = doc.data().name;       // get value of the "name" key
               var details = doc.data().points;  // get value of the "details" key
-              var hikeCode = doc.data().code;    //get unique ID to each hike to be used for fetching right image
               var docID = doc.id;
               let newcard = cardTemplate.content.cloneNode(true);
 
               //update title and text and image
               newcard.querySelector('.card-title').innerHTML = title;
-              newcard.querySelector('.card-lenpointsgth').innerHTML = hikeLength +"points";
+              newcard.querySelector('.card-points').innerHTML = points +"points";
               newcard.querySelector('.card-text').innerHTML = details;
               // newcard.querySelector('.card-image').src = `./images/${hikeCode}.jpg`; //placeholder
               newcard.querySelector('a').href = "feed.html?docID="+docID;
