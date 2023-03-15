@@ -18,6 +18,9 @@
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+
+  <link rel="stylesheet" href="../../public/css/map/leaflet.min.css"/>
+	<script src="../../public/js/map/leaflet.min.js"></script>
 </head>
 
 <body>
@@ -41,7 +44,7 @@
         </div>
       </div>
       <div class="form-group">
-        <div id="map" style="height: 400px;"></div>
+        <div id="mapid" style="height: 400px;"></div>
       </div>
       <div class="form-group">
         <div class="input-group">
@@ -57,9 +60,9 @@
             <label class="input-group-text" for="transportation"><img class="wh1" src="../../public/images/transportation/type.png"></label>
           </div>
           <select id="transportation" class="custom-select">
-            <option value="BICYCLING">Bicycle</option>
-            <option value="TRANSIT">Bus</option>
-            <option value="DRIVING">Metro</option>
+            <option value="Bicycle">Bicycle</option>
+            <option value="Bus">Bus</option>
+            <option value="Metro">Metro</option>
           </select>
         </div>
       </div>
@@ -82,6 +85,5 @@
 
   <script src="../../public/js/dbManager.js"></script>
   <script src="../../public/js/transportaion.js"></script>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
 </body>
 </html>

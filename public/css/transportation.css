@@ -2,3 +2,7 @@
     height: 400px;
     width: 100%;
 }
+
+.leaflet-default-icon-path {
+    background-image: url(../images/transportation/pin.png) !important;
+}

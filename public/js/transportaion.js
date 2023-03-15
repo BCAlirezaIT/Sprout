@@ -1,77 +1,112 @@
-document.getElementById('submitButton').addEventListener("click", function(event) {
+var submitButton = document.getElementById('submitButton');
+var startField = document.getElementById('start');
+var endField = document.getElementById('end');
+var pointsField = document.getElementById("points-earned");
+var distField = document.getElementById('travel-distance');
+var tType = document.getElementById('transportation');
+var mLayer;
+var map;
+const pinIcon = L.icon({
+  iconUrl: '../../public/images/transportation/pin.png',
+  iconSize: [38, 38],
+  iconAnchor: [19, 38],
+});
+
+submitButton.addEventListener("click", function (event) {
   event.preventDefault();
   submitData();
-})
+});
+
+startField.addEventListener("input", validatePos);
+
+endField.addEventListener("input", validatePos);
+
+initMap();
 
 function initMap() {
-  var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 10,
-    center: { lat: 37.7749, lng: -122.4194 }
-  });
-  var startMarker = new google.maps.Marker({
-    position: { lat: 37.7749, lng: -122.4194 },
-    map: map,
-    draggable: true
-  });
-  var endMarker = new google.maps.Marker({
-    position: { lat: 37.7749, lng: -122.4194 },
-    map: map,
-    draggable: true
-  });
-  var directionsService = new google.maps.DirectionsService();
-  var directionsDisplay = new google.maps.DirectionsRenderer({
-    map: map,
-    suppressMarkers: true
-  });
-  var onChangeHandler = function () {
-    calculateDistance(startMarker.getPosition(), endMarker.getPosition(), directionsService, directionsDisplay);
-  };
-  startMarker.addListener('dragend', onChangeHandler);
-  endMarker.addListener('dragend', onChangeHandler);
-  function calculateDistance(start, end, service, display) {
-    service.route({
-      origin: start,
-      destination: end,
-      travelMode: google.maps.TravelMode[$('#transportation').val()]
-    }, function (response, status) {
-      if (status === google.maps.DirectionsStatus.OK) {
-        display.setDirections(response);
-        var distance = response.routes[0].legs[0].distance.text;
-        $('#travel-distance').val(distance);
-        var points = calculatePoints(distance, $('#transportation').val());
-        $('#points-earned').val(points);
-      } else {
-        alert('Directions request failed due to ' + status);
-      }
-    });
-  }
+  map = L.map('mapid').setView([51.505, -0.09], 13);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+    maxZoom: 18,
+  }).addTo(map);
+  mLayer = L.layerGroup().addTo(map);
 }
 
-function calculatePoints(distance, transportation) {
-  var distanceInMiles = parseFloat(distance.replace(',', '').split(' ')[0]);
-  var pointsPerMile = 0;
+function testInputStructure(value) {
+  return /^[-+]?[0-9]*\.?[0-9]+,[-+]?[0-9]*\.?[0-9]+$/.test(value);
+}
+
+function validatePos() {
+  mLayer.clearLayers();
+
+  var res = testInputStructure(startField.value) && testInputStructure(endField.value);
+
+  if (!res)
+    return;
+
+  var dim0 = startField.value.split(",");
+  var mark0 = mark([dim0[0], dim0[1]]);
+
+  var dim1 = endField.value.split(",");
+  var mark1 = mark([dim1[0], dim1[1]]);
+
+  var latlngs = [mark0.getLatLng(), mark1.getLatLng()];
+  L.polyline(latlngs, {color: 'red'}).addTo(mLayer);
+
+  var distance = getDistanceFromLatLonInKm(dim0[0], dim0[1], dim1[0], dim1[1]);
+  distField.value = distance + "KM";
+  calculatePoints(distance);
+}
+
+function mark(pos) {
+  var mark = L.marker([pos[0], pos[1]]).addTo(mLayer);
+  mark.setIcon(pinIcon);
+  return mark;
+}
+
+function getDistanceFromLatLonInKm(lat0, lon0, lat1, lon1) {
+  const earthRadius = 6371;
+  const dLat = deg2rad(lat1 - lat0);
+  const dLon = deg2rad(lon1 - lon0);
+  const a =
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos(deg2rad(lat0)) * Math.cos(deg2rad(lat1)) *
+    Math.sin(dLon / 2) * Math.sin(dLon / 2)
+    ;
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  const distance = earthRadius * c;
+  return distance;
+}
+
+function deg2rad(deg) {
+  return deg * (Math.PI / 180)
+}
+
+function calculatePoints(distance) {
+  var transportation = tType.value;
+  var pointsPerKM = 0;
   switch (transportation) {
     case 'Bicycle':
-      pointsPerMile = 1;
+      pointsPerKM = 1;
       break;
     case 'Bus':
-      pointsPerMile = 0.5;
+      pointsPerKM = 0.5;
       break;
     case 'Metro':
-      pointsPerMile = 0.25;
+      pointsPerKM = 0.25;
       break;
   }
-  return Math.round(distanceInMiles * pointsPerMile);
+  pointsField.value = Math.round(distance * pointsPerKM);
 }
 
 function submitData() {
   var userID;
   firebase.auth().onAuthStateChanged(user => {
     if (user) {
-        var currentUser = db.collection("users").doc(user.uid)
-        userID = user.uid;
+      var currentUser = db.collection("users").doc(user.uid)
+      userID = user.uid;
     }
-  }); //Will cover the whole func later
+  });
   var start = document.getElementById("start").value;
   var end = document.getElementById("end").value;
   var type = document.getElementById("transportation").selectedIndex;
